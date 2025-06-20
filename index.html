@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Data Dilemma - AI-Driven Data Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #fff;
+            color: #000;
+        }
+
+        header {
+            background-color: #000;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        header nav a:hover {
+            color: #bbb;
+        }
+
+        .hero {
+            background-color: #fff;
+            color: #000;
+            padding: 100px 20px;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+
+        .cta-btn {
+            background-color: #000;
+            color: white;
+            padding: 12px 40px;
+            font-size: 1.2em;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-btn:hover {
+            background-color: #333;
+        }
+
+        .services, .projects, .research, .contact, .connect {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .services, .projects, .research {
+            background-color: #fff;
+            color: #000;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .services h2, .projects h2, .research h2, .contact h2, .connect h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-item, .project-item, .research-item {
+            background-color: #fff;
+            padding: 30px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .service-item:hover, .project-item:hover, .research-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-item h3, .project-item h3, .research-item h3 {
+            font-size: 1.6em;
+            color: #000;
+            margin-bottom: 15px;
+        }
+
+        .service-item p, .project-item p, .research-item p {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        footer {
+            background-color: #000;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #bbb;
+        }
+
+        .contact p {
+            color: #000;
+            font-size: 1.1em;
+        }
+
+        .contact a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            color: #333;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact form input, .contact form textarea {
+                width: 90%;
+            }
+
+            .contact form button {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <h1>The Data Dilemma</h1>
+            <nav>
+                <a href="#services">Services</a>
+                <a href="#projects">Projects</a>
+                <a href="#research">Research</a>
+                <a href="#contact">Contact</a>
+                <a href="#connect">Connect</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero">
+        <h1>Innovative AI Solutions to <br> Tackle Your Data Dilemmas</h1>
+        <button class="cta-btn" onclick="document.location='#contact'">Get Started</button>
+    </div>
+
+    <div id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="service-grid">
+            <div class="service-item">
+                <h3>AI-Powered Data Transcription & Translation</h3>
+                <p>We use Large Language Models (LLMs) to provide accurate transcription and translation services, enabling efficient data management and communication across industries.</p>
+            </div>
+            <div class="service-item">
+                <h3>Retrieval-Augmented Generation (RAG)</h3>
+                <p>Our RAG solutions integrate data retrieval with AI generation, providing highly relevant, context-aware outputs for data extraction, summarization, and analysis.</p>
+            </div>
+            <div class="service-item">
+                <h3>Real-Time Data Processing for Enterprises</h3>
+                <p>On-demand, real-time data processing solutions for businesses that need instant insights, such as transcription and translation services tailored for fast-paced environments.</p>
+            </div>
+            <div class="service-item">
+                <h3>Data Summarization & Document Analysis</h3>
+                <p>Leverage AI-driven algorithms to summarize large datasets, research papers, and business documents to provide key insights quickly and effectively.</p>
+            </div>
+            <div class="service-item">
+                <h3>AI-Based Accessibility Solutions</h3>
+                <p>We offer transcription, translation, and summarization services with multilingual support for enhanced accessibility and broader communication reach.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="projects" class="projects">
+        <h2>Our GitHub Projects</h2>
+        <div class="service-grid">
+            <div class="project-item">
+                <h3>MediBeng Whisper Tiny</h3>
+                <p>Fine-tuned ASR model for Bengali-English speech translation. <a href="https://github.com/pr0mila/MediBeng-Whisper-Tiny" target="_blank">GitHub</a></p>
+            </div>
+            <div class="project-item">
+                <h3>LLM Application</h3>
+                <p>A real-time AI-powered chat app using FastAPI, WebSocket, and Groq. <a href="https://github.com/pr0mila/GroqStreamChain" target="_blank">GitHub</a></p>
+            </div>
+            <div class="project-item">
+                <h3>MediRag Guard</h3>
+                <p>A RAG delivers comprehensive, context-aware insights on healthcare data privacy through a novel knowledge tree. <a href="https://github.com/pr0mila/MediRag-Guard" target="_blank">GitHub</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="research" class="research">
+        <h2>Our Research Contributions</h2>
+        <div class="service-grid">
+            <div class="research-item">
+                <h3>Recognition of Sunflower Diseases Using Hybrid Deep Learning and Its Explainability with AI</h3>
+                <p>A hybrid AI model combining transfer learning (VGG19) and CNN for efficient sunflower disease detection, achieving superior precision, recall, and accuracy compared to other approaches. <a href="https://www.mdpi.com/2227-7390/11/10/2241" target="_blank">Link</a></p>
+            </div>
+            <div class="research-item">
+                <h3>MediBeng Whisper Tiny: A fine-tuned code-switched Bengali-English translator for clinical applications</h3>
+                <p>We present the MediBeng Whisper Tiny model, a cost-effective, fine-tuned solution for accurate transcription and translation of code-switched Bengali-English conversations in healthcare, achieving exceptional results with minimal data. <a href="https://www.medrxiv.org/content/10.1101/2025.04.25.25326406v3" target="_blank">Link</a></p>
+            </div>
+            <div class="research-item">
+                <h3>Fake news detection of covid-19 using machine learning techniques</h3>
+                <p>This study analyzes machine learning techniques, with the Random Forest ensemble method achieving 90% accuracy in identifying fake news related to the COVID-19 pandemic, addressing the harmful spread of misinformation. <a href="https://link.springer.com/chapter/10.1007/978-3-030-93247-3_46" target="_blank">Link</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>For inquiries, collaborations, or any questions, feel free to reach out to us at:</p>
+        <p><strong>Email:</strong> me@promila.info</p>
+        <p><strong>Address:</strong> Nirala, SKhulna, Bangladesh</p>
+    </div>
+
+    <div id="connect" class="connect">
+        <h2>Want to Connect for More Details?</h2>
+        <p>Let's talk! <a href="mailto:me@promila.info">Email us</a> or connect on <a href="https://www.linkedin.com/company/the-data-dilemma" target="_blank">LinkedIn</a>.</p>
+    </div>
+
+    <footer>
+        <p>The Data Dilemma © 2025 | All Rights Reserved</p>
+        <p><a href="https://github.com/pr0mila" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/company/the-data-dilemma" target="_blank">LinkedIn</a></p>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the form from reloading the page
+            document.getElementById('confirmationMessage').style.display = 'block'; // Show confirmation message
+        });
+    </script>
+</body>
+
+</html>
