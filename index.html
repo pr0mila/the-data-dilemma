@@ -7,285 +7,341 @@
     <link rel="icon" href="icon.png" type="image/x-icon">
 
     <title>The Data Dilemma - AI-Driven Data Solutions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background-color: #fff;
-            color: #000;
         }
 
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background-color: #ffffff;
+        }
+
+        /* Header */
         header {
-            background-color: #000;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
+            background-color: #000000;
+            color: #ffffff;
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
         }
 
-        header nav a {
-            color: white;
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            pointer-events: none;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #ffffff;
             text-decoration: none;
-            margin: 0 20px;
-            font-weight: 600;
-            text-transform: uppercase;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
         }
 
-        header nav a:hover {
-            color: #bbb;
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #ffffff;
+            transition: width 0.3s ease;
         }
 
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
         .hero {
-            background-color: #fff;
-            color: #000;
-            padding: 100px 20px;
+            background-color: #ffffff;
+            padding: 8rem 2rem;
             text-align: center;
-            border-bottom: 1px solid #ccc;
+            border-bottom: 1px solid #e5e5e5;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .hero h1 {
-            font-size: 3.5em;
-            margin-bottom: 20px;
-            letter-spacing: 2px;
+            font-size: 4rem;
+            font-weight: 700;
+            color: #000000;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 2rem;
         }
 
         .hero p {
-            font-size: 1.2em;
-            margin-bottom: 40px;
+            font-size: 1.25rem;
+            color: #666666;
+            margin-bottom: 3rem;
+            font-weight: 400;
         }
 
         .cta-btn {
-            background-color: #000;
-            color: white;
-            padding: 12px 40px;
-            font-size: 1.2em;
+            background-color: #000000;
+            color: #ffffff;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
             border: none;
             cursor: pointer;
-            border-radius: 4px;
-            transition: background-color 0.3s;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            letter-spacing: 0.01em;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
 
         .cta-btn:hover {
-            background-color: #333;
+            background-color: #333333;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
         }
 
-        .solutions, .projects, .research, .contact, .contribute {
-            padding: 60px 20px;
+        /* Sections */
+        .section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section:nth-child(even) {
+            background-color: #fafafa;
+        }
+
+        .section h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #000000;
             text-align: center;
+            margin-bottom: 3rem;
+            letter-spacing: -0.02em;
         }
 
-        .solutions, .projects, .research {
-            background-color: #fff;
-            color: #000;
-            border-bottom: 1px solid #ccc;
+        /* Grid Layouts */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
         }
 
-        .solutions h2, .projects h2, .research h2, .contact h2, .contribute h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
+        .card {
+            background-color: #ffffff;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
             font-weight: 600;
-            text-transform: uppercase;
+            color: #000000;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
         }
 
-        .solution-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+        .card p {
+            color: #666666;
+            line-height: 1.7;
+            font-size: 1rem;
         }
 
-        .solution-item, .project-item, .research-item, .contribute-item {
-            background-color: #fff;
-            padding: 30px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: left;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .solution-item:hover, .project-item:hover, .research-item:hover, .contribute-item:hover {
-            transform: translateY(-10px);
-        }
-
-        .solution-item h3, .project-item h3, .research-item h3, .contribute-item h3 {
-            font-size: 1.6em;
-            color: #000;
-            margin-bottom: 15px;
-        }
-
-        .solution-item p, .project-item p, .research-item p, .contribute-item p {
-            font-size: 1.1em;
-            color: #555;
-        }
-
-        .contribute-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        footer {
-            background-color: #000;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        footer a {
-            color: white;
+        .card a {
+            color: #000000;
             text-decoration: none;
+            border-bottom: 2px solid #000000;
+            transition: all 0.3s ease;
+            font-weight: 500;
         }
 
-        footer a:hover {
-            color: #bbb;
+        .card a:hover {
+            color: #666666;
+            border-bottom-color: #666666;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: #000000;
+            color: #ffffff;
+            text-align: center;
+            padding: 6rem 2rem;
+        }
+
+        .contact h2 {
+            color: #ffffff;
+            font-size: 3rem;
+            margin-bottom: 2rem;
         }
 
         .contact p {
-            color: #000;
-            font-size: 1.1em;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #cccccc;
         }
 
         .contact a {
-            color: #000;
+            color: #ffffff;
             text-decoration: none;
+            border-bottom: 2px solid #ffffff;
+            transition: all 0.3s ease;
         }
 
         .contact a:hover {
-            color: #333;
+            color: #cccccc;
+            border-bottom-color: #cccccc;
         }
 
-        .contribute p {
-            color: #000;
-            font-size: 1.1em;
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #cccccc;
+            padding: 3rem 2rem 2rem;
+            text-align: center;
         }
 
-        .contribute a {
-            color: #000;
+        footer p {
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        footer a {
+            color: #ffffff;
             text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
         }
 
-        .contribute a:hover {
-            color: #333;
+        footer a:hover {
+            color: #cccccc;
         }
 
-        /* Mobile responsiveness */
+        /* Responsive Design */
         @media (max-width: 768px) {
-            header {
-                padding: 20px 10px;
-            }
-
             header h1 {
-                font-size: 1.8em;
-                margin-bottom: 15px;
+                font-size: 2rem;
             }
 
-            header nav {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 10px;
-            }
-
-            header nav a {
-                margin: 5px 10px;
-                font-size: 0.9em;
+            nav {
+                gap: 1.5rem;
             }
 
             .hero {
-                padding: 60px 15px;
+                padding: 5rem 1rem;
             }
 
             .hero h1 {
-                font-size: 2.2em;
-                line-height: 1.2;
-                letter-spacing: 1px;
+                font-size: 2.5rem;
             }
 
             .hero p {
-                font-size: 1em;
-                margin-bottom: 30px;
+                font-size: 1.1rem;
             }
 
-            .cta-btn {
-                font-size: 1em;
-                padding: 10px 30px;
+            .section {
+                padding: 4rem 1rem;
             }
 
-            .solutions, .projects, .research, .contact, .contribute {
-                padding: 40px 15px;
+            .section h2 {
+                font-size: 2.2rem;
             }
 
-            .solutions h2, .projects h2, .research h2, .contact h2, .contribute h2 {
-                font-size: 2em;
-                margin-bottom: 15px;
-            }
-
-            .solution-grid, .contribute-grid {
+            .grid {
                 grid-template-columns: 1fr;
-                gap: 20px;
-                margin-top: 30px;
+                gap: 2rem;
+                margin-top: 2rem;
             }
 
-            .solution-item, .project-item, .research-item, .contribute-item {
-                padding: 20px;
-                margin: 0 5px;
+            .card {
+                padding: 2rem;
             }
 
-            .solution-item h3, .project-item h3, .research-item h3, .contribute-item h3 {
-                font-size: 1.4em;
-                margin-bottom: 12px;
+            .contact {
+                padding: 4rem 1rem;
             }
 
-            .solution-item p, .project-item p, .research-item p, .contribute-item p {
-                font-size: 1em;
-                line-height: 1.5;
-            }
-
-            .contact p, .contribute p {
-                font-size: 1em;
-                margin: 15px 0;
-            }
-
-            footer {
-                padding: 15px 10px;
-                font-size: 0.9em;
-            }
-
-            footer p {
-                margin: 5px 0;
+            .contact h2 {
+                font-size: 2.2rem;
             }
         }
 
-        /* Extra small screens */
         @media (max-width: 480px) {
             header h1 {
-                font-size: 1.5em;
+                font-size: 1.8rem;
             }
 
-            header nav a {
-                margin: 5px 5px;
-                font-size: 0.8em;
+            nav {
+                gap: 1rem;
+            }
+
+            nav a {
+                font-size: 0.9rem;
             }
 
             .hero h1 {
-                font-size: 1.8em;
+                font-size: 2rem;
             }
 
-            .solutions h2, .projects h2, .research h2, .contact h2, .contribute h2 {
-                font-size: 1.7em;
+            .section h2 {
+                font-size: 1.8rem;
             }
 
-            .solution-item, .project-item, .research-item, .contribute-item {
-                padding: 15px;
-                margin: 0;
+            .card {
+                padding: 1.5rem;
             }
 
-            .solution-item h3, .project-item h3, .research-item h3, .contribute-item h3 {
-                font-size: 1.2em;
+            .card h3 {
+                font-size: 1.3rem;
             }
         }
     </style>
@@ -293,7 +349,7 @@
 
 <body>
     <header>
-        <div>
+        <div class="header-content">
             <h1>The Data Dilemma</h1>
             <nav>
                 <a href="#solutions">Solutions</a>
@@ -306,92 +362,99 @@
     </header>
 
     <div class="hero">
-        <h1>Open Source Intelligence <br> Meets Real-World Impact</h1>
-        <button class="cta-btn" onclick="document.location='#contact'">Get Started</button>
+        <div class="hero-content">
+            <h1>Open Source Intelligence Meets Real-World Impact</h1>
+            <p>Transforming healthcare with ethical AI solutions that prioritize privacy, accessibility, and community collaboration.</p>
+            <button class="cta-btn" onclick="document.location='#contact'">Get Started</button>
+        </div>
     </div>
 
-    <div id="solutions" class="solutions">
+    <div id="solutions" class="section">
         <h2>Open-Source AI Tools</h2>
-        <div class="solution-grid">
-            <div class="solution-item">
+        <div class="grid">
+            <div class="card">
                 <h3>Code-Switched Speech Processing</h3>
                 <p>Open-source tools that handle multilingual audio where speakers switch between languages mid-conversation—a common challenge in healthcare settings with diverse patient populations.</p>
             </div>
-            <div class="solution-item">
+            <div class="card">
                 <h3>Privacy-Preserving Healthcare AI</h3>
                 <p>Community-built solutions that maintain patient confidentiality while enabling powerful AI analysis, designed specifically for healthcare's strict privacy requirements.</p>
             </div>
-            <div class="solution-item">
+            <div class="card">
                 <h3>Low-Resource Language Support</h3>
                 <p>Collaborative tools that work effectively with limited training data, making AI accessible for underserved languages and communities in healthcare contexts.</p>
             </div>
-            <div class="solution-item">
+            <div class="card">
                 <h3>Noise-Robust Audio Processing</h3>
                 <p>Open frameworks that clean and process audio data from real-world healthcare environments—handling background noise, poor recording quality, and challenging acoustic conditions.</p>
             </div>
-            <div class="solution-item">
+            <div class="card">
                 <h3>Deployable Healthcare Models</h3>
                 <p>Production-ready, open-source AI models that bridge the gap between research and real clinical applications, with comprehensive documentation and community support.</p>
             </div>
         </div>
     </div>
 
-    <div id="projects" class="projects">
+    <div id="projects" class="section">
         <h2>Our GitHub Projects</h2>
-        <div class="solution-grid">
-            <div class="project-item">
+        <div class="grid">
+            <div class="card">
                 <h3>MediBeng Whisper Tiny</h3>
-                <p>Fine-tuned ASR model for Bengali-English speech translation. <a href="https://github.com/pr0mila/MediBeng-Whisper-Tiny" target="_blank">GitHub</a></p>
+                <p>Fine-tuned ASR model for Bengali-English speech translation. <a href="https://github.com/The-Data-Dilemma/MediBeng-Whisper-Tiny" target="_blank">View on GitHub</a></p>
             </div>
-            <div class="project-item">
+            <div class="card">
                 <h3>LLM Application</h3>
-                <p>A real-time AI-powered chat app using FastAPI, WebSocket, and Groq. <a href="https://github.com/pr0mila/GroqStreamChain" target="_blank">GitHub</a></p>
+                <p>A real-time AI-powered chat app using FastAPI, WebSocket, and Groq. <a href="https://github.com/The-Data-Dilemma/GroqStreamChain" target="_blank">View on GitHub</a></p>
             </div>
-            <div class="project-item">
+            <div class="card">
                 <h3>MediRag Guard</h3>
-                <p>A RAG delivers comprehensive, context-aware insights on healthcare data privacy through a novel knowledge tree. <a href="https://github.com/pr0mila/MediRag-Guard" target="_blank">GitHub</a></p>
+                <p>A RAG delivers comprehensive, context-aware insights on healthcare data privacy through a novel knowledge tree. <a href="https://github.com/The-Data-Dilemma/MediRag-Guard" target="_blank">View on GitHub</a></p>
+            </div>
+            <div class="card">
+                <h3>Medibeng-Orpheus-3b-0.1-ft-Fine-Tuning</h3>
+                <p>A fine-tuned Text-to-Speech (TTS) model trained on the MediBeng dataset, designed to handle bilingual Bengali-English code-switching in healthcare settings. <a href="https://github.com/The-Data-Dilemma/Medibeng-Orpheus-3b-0.1-ft-Fine-Tuning" target="_blank">View on GitHub</a></p>
             </div>
         </div>
     </div>
 
-    <div id="research" class="research">
+    <div id="research" class="section">
         <h2>Our Research Contributions</h2>
-        <div class="solution-grid">
-            <div class="research-item">
-                <h3>Recognition of Sunflower Diseases Using Hybrid Deep Learning and Its Explainability with AI</h3>
-                <p>A hybrid AI model combining transfer learning (VGG19) and CNN for efficient sunflower disease detection, achieving superior precision, recall, and accuracy compared to other approaches. <a href="https://www.mdpi.com/2227-7390/11/10/2241" target="_blank">Link</a></p>
+        <div class="grid">
+            <div class="card">
+                <h3>Recognition of Sunflower Diseases Using Hybrid Deep Learning</h3>
+                <p>A hybrid AI model combining transfer learning (VGG19) and CNN for efficient sunflower disease detection, achieving superior precision, recall, and accuracy compared to other approaches. <a href="https://www.mdpi.com/2227-7390/11/10/2241" target="_blank">Read Paper</a></p>
             </div>
-            <div class="research-item">
-                <h3>MediBeng Whisper Tiny: A fine-tuned code-switched Bengali-English translator for clinical applications</h3>
-                <p>We present the MediBeng Whisper Tiny model, a cost-effective, fine-tuned solution for accurate transcription and translation of code-switched Bengali-English conversations in healthcare, achieving exceptional results with minimal data. <a href="https://www.medrxiv.org/content/10.1101/2025.04.25.25326406v3" target="_blank">Link</a></p>
+            <div class="card">
+                <h3>MediBeng Whisper Tiny: Clinical Code-Switched Translation</h3>
+                <p>We present the MediBeng Whisper Tiny model, a cost-effective, fine-tuned solution for accurate transcription and translation of code-switched Bengali-English conversations in healthcare. <a href="https://www.medrxiv.org/content/10.1101/2025.04.25.25326406v3" target="_blank">Read Paper</a></p>
             </div>
-            <div class="research-item">
-                <h3>Fake news detection of covid-19 using machine learning techniques</h3>
-                <p>This study analyzes machine learning techniques, with the Random Forest ensemble method achieving 90% accuracy in identifying fake news related to the COVID-19 pandemic, addressing the harmful spread of misinformation. <a href="https://link.springer.com/chapter/10.1007/978-3-030-93247-3_46" target="_blank">Link</a></p>
+            <div class="card">
+                <h3>COVID-19 Fake News Detection</h3>
+                <p>This study analyzes machine learning techniques, with the Random Forest ensemble method achieving 90% accuracy in identifying fake news related to the COVID-19 pandemic. <a href="https://link.springer.com/chapter/10.1007/978-3-030-93247-3_46" target="_blank">Read Paper</a></p>
             </div>
         </div>
     </div>
 
-    <div id="contribute" class="contribute">
+    <div id="contribute" class="section">
         <h2>Join Our Open-Source Mission</h2>
-        <div class="contribute-grid">
-            <div class="contribute-item">
+        <div class="grid">
+            <div class="card">
                 <h3>Code & Development</h3>
                 <p>Contribute to our GitHub repositories, help improve existing tools, or build new solutions for healthcare AI challenges. All skill levels welcome—from bug fixes to major feature development.</p>
             </div>
-            <div class="contribute-item">
+            <div class="card">
                 <h3>Research & Testing</h3>
                 <p>Share your healthcare data challenges, test our tools in real-world scenarios, or collaborate on research papers. Your domain expertise helps make our solutions more practical and effective.</p>
             </div>
-            <div class="contribute-item">
+            <div class="card">
                 <h3>Documentation & Community</h3>
                 <p>Help others by improving documentation, creating tutorials, answering questions, or sharing use cases. Building a supportive community is just as important as building great code.</p>
             </div>
-            <div class="contribute-item">
+            <div class="card">
                 <h3>Partnership & Funding</h3>
                 <p>We welcome mission-aligned partnerships, grants, and collaborations that advance ethical healthcare AI. We also offer implementation consulting to help organizations deploy our open-source tools effectively.</p>
             </div>
-            <div class="contribute-item">
+            <div class="card">
                 <h3>Ideas & Feedback</h3>
                 <p>Have a healthcare data problem that needs solving? Want to suggest new features or research directions? Your insights from the field help guide our development priorities and real-world impact.</p>
             </div>
@@ -400,7 +463,7 @@
 
     <div id="contact" class="contact">
         <h2>Contact Us</h2>
-        <p>For inquiries, collaborations, or any questions, feel free to reach out to us at:</p>
+        <p>For inquiries, collaborations, or any questions, feel free to reach out to us.</p>
         <p><strong>Email:</strong> me@promila.info</p>
         <p><strong>Address:</strong> Nirala, Khulna, Bangladesh</p>
         <p>Let's talk! <a href="mailto:me@promila.info">Email us</a> or connect on <a href="https://www.linkedin.com/company/the-data-dilemma" target="_blank">LinkedIn</a>.</p>
